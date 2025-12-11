@@ -394,21 +394,11 @@ export default function DraftsPage() {
       <header className="sticky top-0 z-50 border-b border-border/50 bg-card-elevated/95 backdrop-blur-xl">
         <div className="px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-lg shadow-primary/25">
-                  <Inbox className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-amber-500 border-2 border-card-elevated flex items-center justify-center">
-                  <span className="text-[9px] font-bold text-white">{stats.pending}</span>
-                </div>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-foreground tracking-tight">Draft Review Queue</h1>
-                <p className="text-sm text-muted-foreground">
-                  AI-generated responses • <span className="text-primary font-medium">{drafts.length} total</span> • {stats.pending} pending review
-                </p>
-              </div>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground tracking-tight">Draft Review Queue</h1>
+              <p className="text-sm text-muted-foreground">
+                AI-generated responses • <span className="text-primary font-medium">{drafts.length} total</span> • {stats.pending} pending review
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <div className="text-right mr-4 hidden md:block">
