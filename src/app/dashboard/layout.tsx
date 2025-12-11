@@ -15,9 +15,12 @@ import {
   Shield,
   Activity,
   MessageSquare,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { useState } from 'react';
 import { signOut } from 'next-auth/react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface NavItem {
   href: string;
@@ -42,6 +45,7 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname();
   const { data: session } = useSession();
+  const { theme, toggleTheme, mounted } = useTheme();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const getBadgeClass = (variant?: string) => {
@@ -142,6 +146,32 @@ export default function DashboardLayout({
 
         {/* User Section - Premium Style */}
         <div className={`absolute bottom-0 left-0 right-0 border-t border-border/50 bg-gradient-to-t from-card-elevated to-transparent ${sidebarCollapsed ? 'p-2' : 'p-3'}`}>
+          {/* Theme Toggle */}
+          {mounted && (
+            <div className={`mb-3 ${sidebarCollapsed ? 'flex justify-center' : ''}`}>
+              <button
+                onClick={toggleTheme}
+                className={`flex items-center gap-2 rounded-lg transition-all duration-200 hover:bg-muted/50 ${
+                  sidebarCollapsed ? 'p-2.5' : 'w-full px-3 py-2.5'
+                }`}
+                title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              >
+                <div className={`rounded-md ${sidebarCollapsed ? 'p-0' : 'p-1.5'} bg-muted/50`}>
+                  {theme === 'dark' ? (
+                    <Sun className={`text-amber-400 ${sidebarCollapsed ? 'h-5 w-5' : 'h-4 w-4'}`} />
+                  ) : (
+                    <Moon className={`text-slate-600 ${sidebarCollapsed ? 'h-5 w-5' : 'h-4 w-4'}`} />
+                  )}
+                </div>
+                {!sidebarCollapsed && (
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                  </span>
+                )}
+              </button>
+            </div>
+          )}
           {session?.user ? (
             <div className={`flex items-center ${sidebarCollapsed ? 'justify-center' : 'gap-3'}`}>
               <div className="relative" title={sidebarCollapsed ? session.user.name || 'User' : undefined}>
