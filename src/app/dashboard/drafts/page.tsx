@@ -400,23 +400,23 @@ export default function DraftsPage() {
                 AI-generated responses • <span className="text-primary font-medium">{drafts.length} total</span> • {stats.pending} pending review
               </p>
             </div>
-            {/* Right Header Controls */}
+            {/* Right Header Controls - Matching Tickets/AI Assistant Style */}
             <div className="flex items-center gap-3">
-              {/* Confidence Indicator - Pill Style */}
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 border border-border/50">
+              {/* Confidence Indicator - Solid Background Pill */}
+              <div className="flex items-center gap-2 px-4 py-2.5 bg-background border border-border rounded-lg">
                 <span className={`h-2 w-2 rounded-full ${stats.avgConfidence >= 85 ? 'bg-success' : stats.avgConfidence >= 70 ? 'bg-amber-500' : 'bg-destructive'}`} />
                 <span className="text-sm font-medium text-foreground">
                   {stats.avgConfidence.toFixed(1)}% Confidence
                 </span>
               </div>
-              {/* Refresh Button */}
+              {/* Refresh Button - Same Style */}
               <button
                 onClick={refreshDrafts}
                 disabled={isLoading}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors border border-border/50 disabled:opacity-50"
+                className="flex items-center gap-2 px-4 py-2.5 bg-background border border-border rounded-lg text-sm text-foreground hover:bg-muted transition-colors disabled:opacity-50"
               >
-                <RefreshCw className={`h-4 w-4 text-muted-foreground ${isLoading ? 'animate-spin' : ''}`} />
-                <span className="text-sm font-medium text-foreground">Refresh</span>
+                <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
+                Refresh
               </button>
             </div>
           </div>
