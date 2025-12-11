@@ -64,7 +64,7 @@ export default function DashboardLayout({
         }`}
       >
         {/* Logo Section */}
-        <div className="h-16 flex items-center justify-between px-4 border-b border-border/50">
+        <div className={`h-16 flex items-center border-b border-border/50 ${sidebarCollapsed ? 'justify-center px-2' : 'justify-between px-4'}`}>
           {!sidebarCollapsed && (
             <Link href="/dashboard/drafts" className="flex items-center gap-3 group">
               <div className="relative">
@@ -81,7 +81,7 @@ export default function DashboardLayout({
           )}
           <button
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            className="p-2 rounded-lg hover:bg-muted/50 transition-all duration-200 hover:scale-105"
+            className={`rounded-lg hover:bg-muted/50 transition-all duration-200 hover:scale-105 ${sidebarCollapsed ? 'p-2.5' : 'p-2'}`}
           >
             {sidebarCollapsed ? (
               <Menu className="h-5 w-5 text-muted-foreground" />
@@ -102,7 +102,7 @@ export default function DashboardLayout({
         )}
 
         {/* Navigation */}
-        <nav className="p-3 mt-2 space-y-1">
+        <nav className={`mt-2 space-y-1 ${sidebarCollapsed ? 'px-2' : 'p-3'}`}>
           {!sidebarCollapsed && (
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground px-3 mb-2">Operations</p>
           )}
@@ -113,14 +113,19 @@ export default function DashboardLayout({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nav-item group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${
+                title={sidebarCollapsed ? item.label : undefined}
+                className={`nav-item group flex items-center rounded-lg transition-all duration-200 ${
+                  sidebarCollapsed
+                    ? 'justify-center p-2.5'
+                    : 'gap-3 px-3 py-2.5'
+                } ${
                   isActive
                     ? 'nav-item-active bg-primary/10 text-primary border border-primary/20 shadow-sm shadow-primary/10'
                     : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground border border-transparent'
                 }`}
               >
-                <div className={`p-1.5 rounded-md ${isActive ? 'bg-primary/20' : 'bg-muted/50 group-hover:bg-muted'}`}>
-                  <Icon className="h-4 w-4 flex-shrink-0" />
+                <div className={`rounded-md ${sidebarCollapsed ? 'p-2' : 'p-1.5'} ${isActive ? 'bg-primary/20' : 'bg-muted/50 group-hover:bg-muted'}`}>
+                  <Icon className={`flex-shrink-0 ${sidebarCollapsed ? 'h-5 w-5' : 'h-4 w-4'}`} />
                 </div>
                 {!sidebarCollapsed && (
                   <span className="font-medium text-sm">{item.label}</span>
@@ -136,16 +141,16 @@ export default function DashboardLayout({
         </nav>
 
         {/* User Section - Premium Style */}
-        <div className="absolute bottom-0 left-0 right-0 p-3 border-t border-border/50 bg-gradient-to-t from-card-elevated to-transparent">
+        <div className={`absolute bottom-0 left-0 right-0 border-t border-border/50 bg-gradient-to-t from-card-elevated to-transparent ${sidebarCollapsed ? 'p-2' : 'p-3'}`}>
           {session?.user ? (
-            <div className={`flex items-center gap-3 ${sidebarCollapsed ? 'justify-center' : ''}`}>
-              <div className="relative">
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center ring-2 ring-primary/20 overflow-hidden">
+            <div className={`flex items-center ${sidebarCollapsed ? 'justify-center' : 'gap-3'}`}>
+              <div className="relative" title={sidebarCollapsed ? session.user.name || 'User' : undefined}>
+                <div className={`rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center ring-2 ring-primary/20 overflow-hidden ${sidebarCollapsed ? 'h-10 w-10' : 'h-10 w-10'}`}>
                   {session.user.image ? (
                     <img
                       src={session.user.image}
                       alt={session.user.name || 'User'}
-                      className="h-10 w-10 rounded-xl object-cover"
+                      className="h-full w-full rounded-xl object-cover"
                     />
                   ) : (
                     <User className="h-5 w-5 text-primary" />
@@ -176,7 +181,7 @@ export default function DashboardLayout({
           ) : (
             <Link
               href="/auth/signin"
-              className="btn-primary flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-200"
+              className={`btn-primary flex items-center justify-center rounded-lg font-medium transition-all duration-200 ${sidebarCollapsed ? 'p-2.5' : 'gap-2 px-4 py-2.5'}`}
             >
               <User className="h-5 w-5" />
               {!sidebarCollapsed && <span>Sign In</span>}
