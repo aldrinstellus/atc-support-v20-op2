@@ -649,7 +649,7 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
       </div>
 
       {/* Input Area - Fixed at bottom, centered */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-border bg-card/95 backdrop-blur-xl px-6 py-6">
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background to-transparent pt-6 pb-8 px-6">
         <div className="max-w-3xl mx-auto">
           <form onSubmit={handleSubmit} className="flex gap-3">
             <input
@@ -658,13 +658,13 @@ export const InteractiveChat = forwardRef<InteractiveChatRef, InteractiveChatPro
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="What would you like to do?"
-              className="flex-1 px-4 py-3 bg-background border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              className="flex-1 px-4 py-3.5 bg-card border border-border/50 rounded-xl text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 shadow-lg"
               disabled={isThinking || isComposing}
             />
             <button
               type="submit"
               disabled={!inputValue.trim() || isThinking || isComposing}
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+              className="px-6 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg flex items-center gap-2"
             >
               Send
               <Send className="w-4 h-4" />
