@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback, Suspense } from 'react';
-import { MessageSquare, ChevronDown, Sun, Moon } from 'lucide-react';
+import { ChevronDown, Sun, Moon } from 'lucide-react';
 import { InteractiveChat } from '@/components/chat/InteractiveChat';
 import { PersonaProvider, usePersona } from '@/contexts/PersonaContext';
 import { ConversationProvider } from '@/contexts/ConversationContext';
@@ -53,16 +53,11 @@ function ChatPageContent() {
       {/* Compact Header - Integrated with dashboard */}
       <div className="sticky top-0 z-30 border-b border-border/50 bg-card-elevated/95 backdrop-blur-xl px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/70 shadow-lg shadow-primary/25">
-              <MessageSquare className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground tracking-tight">AI Assistant</h1>
-              <p className="text-xs text-muted-foreground">
-                Claude-powered support for IT tickets and knowledge base
-              </p>
-            </div>
+          <div>
+            <h1 className="text-xl font-bold text-foreground tracking-tight">AI Assistant</h1>
+            <p className="text-xs text-muted-foreground">
+              Claude-powered support for IT tickets and knowledge base
+            </p>
           </div>
 
           {/* Right Header Controls */}
