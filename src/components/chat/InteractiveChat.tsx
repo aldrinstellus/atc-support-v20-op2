@@ -9,7 +9,8 @@ import { useQuickAction } from '@/contexts/QuickActionContext';
 import { useConversation, type Message } from '@/contexts/ConversationContext';
 import { Avatar } from '@/components/ui/Avatar';
 import type { Persona } from '@/types/persona';
-import { ClosedCaptions } from '@/components/accessibility/ClosedCaptions';
+// ClosedCaptions is available for accessibility features but not currently used
+// import { ClosedCaptions } from '@/components/accessibility/ClosedCaptions';
 import { useClosedCaptions } from '@/hooks/accessibility/useClosedCaptions';
 import { ClientOnly } from '@/components/ui/ClientOnly';
 import { ThinkingBlock } from '@/components/chat/ThinkingBlock';

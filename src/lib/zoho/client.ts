@@ -15,7 +15,6 @@ import type {
   ZohoSendReplyRequest,
   ZohoSendReplyResponse,
   ZohoUpdateTicketStatusRequest,
-  ZohoError,
   ZohoApiResponse,
 } from './types';
 

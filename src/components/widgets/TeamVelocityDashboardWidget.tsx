@@ -4,7 +4,7 @@ import {
   Activity,
   Target
 } from 'lucide-react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { motion } from 'framer-motion';
 import type { TeamVelocityData } from '@/types/widget';
 import { pmTeamVelocityData } from '@/data/persona-data/project-manager-data';
@@ -56,8 +56,6 @@ export function TeamVelocityDashboardWidget({ data: providedData }: { data?: Tea
       transition: { type: "spring" as const, stiffness: 100 }
     }
   };
-
-  const barColors = ['#8b5cf6', '#3b82f6'];
 
   return (
     <motion.div

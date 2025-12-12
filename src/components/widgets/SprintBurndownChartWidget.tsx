@@ -1,11 +1,9 @@
 import {
   TrendingDown,
-  Calendar,
   Activity,
-  AlertTriangle,
-  CheckCircle2
+  AlertTriangle
 } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Area, AreaChart } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, Area, AreaChart } from 'recharts';
 import { motion } from 'framer-motion';
 import type { SprintBurndownData } from '@/types/widget';
 import { pmSprintBurndownData } from '@/data/persona-data/project-manager-data';

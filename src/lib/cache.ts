@@ -51,7 +51,7 @@ export async function cachedFetch<T>(
       console.log('[Cache] Cache hit:', { key, ttl })
       try {
         return JSON.parse(cached) as T
-      } catch (parseError) {
+      } catch {
         console.warn('[Cache] Failed to parse cached data, deleting:', { key })
         await redis.del(key)
         // Fall through to fetch
@@ -177,7 +177,7 @@ export async function getCacheValue<T>(key: string): Promise<T | null> {
 
     try {
       return JSON.parse(cached) as T
-    } catch (parseError) {
+    } catch {
       console.warn('[Cache] Failed to parse cached value:', { key })
       await redis.del(key)
       return null

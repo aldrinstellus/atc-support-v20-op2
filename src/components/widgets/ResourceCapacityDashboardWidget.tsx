@@ -1,9 +1,7 @@
 import {
   Users,
   TrendingUp,
-  Calendar,
-  AlertTriangle,
-  CheckCircle2
+  Calendar
 } from 'lucide-react';
 import type { ResourceCapacityData } from '@/types/widget';
 

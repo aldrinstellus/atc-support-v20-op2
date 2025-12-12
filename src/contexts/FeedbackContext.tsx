@@ -146,6 +146,14 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
     setCurrentFeedback((prev) => ({ ...prev, ...details }));
   }, []);
 
+  const resetFeedback = useCallback(() => {
+    setScreenshot(null);
+    setAnnotations([]);
+    setTaggedElements([]);
+    setCurrentFeedback(null);
+    setMode('idle');
+  }, []);
+
   const submitFeedback = useCallback(
     async (targets: IntegrationTarget[]) => {
       if (!screenshot) {
@@ -199,16 +207,8 @@ export function FeedbackProvider({ children }: { children: ReactNode }) {
         setIsSubmitting(false);
       }
     },
-    [screenshot, annotations, taggedElements, currentFeedback, closeWidget]
+    [screenshot, annotations, taggedElements, currentFeedback, closeWidget, resetFeedback]
   );
-
-  const resetFeedback = useCallback(() => {
-    setScreenshot(null);
-    setAnnotations([]);
-    setTaggedElements([]);
-    setCurrentFeedback(null);
-    setMode('idle');
-  }, []);
 
   return (
     <FeedbackContext.Provider

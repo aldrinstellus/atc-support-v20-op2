@@ -170,6 +170,7 @@ export function FeedbackPanel() {
                           Screenshot
                         </label>
                         <div className="relative aspect-video rounded-lg border border-border overflow-hidden bg-muted">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={screenshot}
                             alt="Screenshot preview"
@@ -232,6 +233,7 @@ export function FeedbackPanel() {
                           Screenshot
                         </label>
                         <div className="relative h-32 rounded-lg border border-border overflow-hidden bg-muted">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={screenshot}
                             alt="Screenshot preview"

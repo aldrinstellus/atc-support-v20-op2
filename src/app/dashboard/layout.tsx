@@ -177,6 +177,7 @@ export default function DashboardLayout({
               <div className="relative" title={sidebarCollapsed ? session.user.name || 'User' : undefined}>
                 <div className={`rounded-xl bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center ring-2 ring-primary/20 overflow-hidden ${sidebarCollapsed ? 'h-10 w-10' : 'h-10 w-10'}`}>
                   {session.user.image ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       src={session.user.image}
                       alt={session.user.name || 'User'}

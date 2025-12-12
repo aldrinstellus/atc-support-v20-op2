@@ -10,7 +10,6 @@ import {
   Search,
   ChevronRight,
   Sparkles,
-  TrendingUp,
   User,
   AlertCircle,
 } from 'lucide-react';
@@ -373,7 +372,8 @@ export default function DraftsPage() {
     await loadDrafts();
   };
 
-  const statusColors: Record<string, string> = {
+  // Status and priority color mappings for future use
+  const _statusColors: Record<string, string> = {
     PENDING_REVIEW: 'bg-chart-4/20 text-chart-4 border-chart-4/30',
     IN_REVIEW: 'bg-primary/20 text-primary border-primary/30',
     APPROVED: 'bg-success/20 text-success border-success/30',
@@ -381,7 +381,7 @@ export default function DraftsPage() {
     SENT: 'bg-success/20 text-success border-success/30',
   };
 
-  const priorityColors: Record<string, string> = {
+  const _priorityColors: Record<string, string> = {
     CRITICAL: 'bg-destructive/20 text-destructive',
     HIGH: 'bg-chart-4/20 text-chart-4',
     MEDIUM: 'bg-chart-3/20 text-chart-3',

@@ -55,7 +55,8 @@ import { SentimentAnalysisWidget } from './SentimentAnalysisWidget';
 import { CustomerRiskProfileWidget } from './CustomerRiskProfileWidget';
 import { LiveTicketListWidget } from './LiveTicketListWidget';
 import { LiveTicketDetailWidget } from './LiveTicketDetailWidget';
-import { LiveMetricsWidget } from './LiveMetricsWidget';
+// LiveMetricsWidget is available but not currently used in any widget case
+// import { LiveMetricsWidget } from './LiveMetricsWidget';
 import { AgentDashboardWidget } from './AgentDashboardWidget';
 import { TeamWorkloadDashboardWidget } from './TeamWorkloadDashboardWidget';
 import { MeetingSchedulerWidget } from './MeetingSchedulerWidget';

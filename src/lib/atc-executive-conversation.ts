@@ -23,7 +23,8 @@ const getCurrentDate = (): string => {
 };
 
 // Get date N days ago in "Month DD, YYYY" format
-const getDaysAgo = (days: number): string => {
+// Reserved for future use - dynamic date generation for conversations
+const _getDaysAgo = (days: number): string => {
   const date = new Date();
   date.setDate(date.getDate() - days);
   return date.toLocaleDateString('en-US', {

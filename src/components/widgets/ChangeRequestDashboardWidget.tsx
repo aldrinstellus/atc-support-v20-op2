@@ -1,6 +1,5 @@
 import {
   GitBranch,
-  Calendar,
   TrendingUp,
   AlertTriangle,
   CheckCircle2,

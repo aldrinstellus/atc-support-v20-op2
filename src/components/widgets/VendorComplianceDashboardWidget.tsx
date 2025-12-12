@@ -2,8 +2,6 @@ import {
   Shield,
   AlertTriangle,
   CheckCircle2,
-  TrendingUp,
-  TrendingDown,
   AlertCircle
 } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -36,12 +34,6 @@ export function VendorComplianceDashboardWidget({ data }: { data?: VendorComplia
     if (score >= 90) return 'text-success';
     if (score >= 75) return 'text-chart-4';
     return 'text-destructive';
-  };
-
-  const getScoreStatus = (score: number) => {
-    if (score >= 90) return 'success';
-    if (score >= 75) return 'warning';
-    return 'critical';
   };
 
   const violationColors = {

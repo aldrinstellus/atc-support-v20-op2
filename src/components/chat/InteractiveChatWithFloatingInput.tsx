@@ -13,7 +13,6 @@ export function InteractiveChatWithFloatingInput() {
   const { currentPersona } = usePersona();
   const { sidebarOpen } = useSidebar();
   const { quickActionQuery, setQuickActionQuery } = useQuickAction();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -49,7 +48,6 @@ export function InteractiveChatWithFloatingInput() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleWidgetClick = (query: string) => {
     // Trigger the query in InteractiveChat via ref
     chatRef.current?.submitQuery(query);

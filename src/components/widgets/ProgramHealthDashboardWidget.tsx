@@ -1,8 +1,6 @@
 import {
   Activity,
   AlertTriangle,
-  CheckCircle2,
-  TrendingUp,
   Calendar,
   DollarSign,
   Users,

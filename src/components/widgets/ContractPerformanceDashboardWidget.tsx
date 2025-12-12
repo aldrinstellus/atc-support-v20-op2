@@ -4,7 +4,6 @@ import {
   AlertTriangle,
   CheckCircle2,
   TrendingUp,
-  TrendingDown,
   Clock,
 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';

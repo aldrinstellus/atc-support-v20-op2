@@ -3,9 +3,7 @@ import {
   MessageSquare,
   Calendar,
   CheckCircle2,
-  Clock,
-  TrendingUp,
-  AlertCircle
+  Clock
 } from 'lucide-react';
 import type { StakeholderEngagementData } from '@/types/widget';
 

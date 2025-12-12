@@ -4,7 +4,6 @@ import {
   AlertTriangle,
   Activity,
   TrendingUp,
-  TrendingDown,
   CheckCircle2,
   ArrowUpRight,
   ArrowDownRight,

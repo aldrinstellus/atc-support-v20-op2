@@ -2,16 +2,15 @@
 
 import { useState } from 'react';
 import {
-  Settings,
   User,
   Bell,
   Shield,
   Palette,
-  Mail,
-  MessageSquare,
   Zap,
   Save,
   Check,
+  MessageSquare,
+  Mail,
 } from 'lucide-react';
 
 const settingsSections = [

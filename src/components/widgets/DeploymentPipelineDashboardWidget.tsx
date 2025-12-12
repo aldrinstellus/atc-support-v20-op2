@@ -4,8 +4,7 @@ import {
   XCircle,
   Clock,
   TrendingUp,
-  Activity,
-  AlertTriangle
+  Activity
 } from 'lucide-react';
 import type { DeploymentPipelineData } from '@/types/widget';
 

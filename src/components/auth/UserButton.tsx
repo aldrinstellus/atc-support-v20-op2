@@ -52,6 +52,7 @@ export function UserButton() {
         className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
       >
         {session.user.image ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={session.user.image}
             alt={session.user.name || 'User'}
@@ -73,6 +74,7 @@ export function UserButton() {
           <div className="p-4 border-b border-border">
             <div className="flex items-center gap-3">
               {session.user.image ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                   src={session.user.image}
                   alt={session.user.name || 'User'}

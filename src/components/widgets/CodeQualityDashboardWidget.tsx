@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Code2,
   AlertTriangle,
-  CheckCircle2,
   TrendingUp,
   TrendingDown,
   Bug,

@@ -1,10 +1,7 @@
 import {
   FileText,
-  CheckCircle2,
-  Clock,
   AlertTriangle,
-  Link2,
-  Users
+  Link2
 } from 'lucide-react';
 import type { RequirementsTrackingData } from '@/types/widget';
 
