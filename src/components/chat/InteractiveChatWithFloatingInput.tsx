@@ -68,7 +68,7 @@ export function InteractiveChatWithFloatingInput() {
     <div className="relative h-full">
       {/* Hide InteractiveChat's default input with CSS */}
       <style jsx global>{`
-        .floating-input-wrapper .border-t.border-border.bg-card {
+        .floating-input-wrapper .absolute.bottom-0 {
           display: none;
         }
       `}</style>
