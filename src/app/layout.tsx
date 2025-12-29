@@ -8,24 +8,23 @@ import { FeedbackProvider } from "@/contexts/FeedbackContext";
 // import { DemoModeIndicator } from "@/components/demo/DemoModeIndicator";
 import { SessionProvider } from "@/components/auth/SessionProvider";
 
-// Helper function to format version for display (14.0.0 → V14, 14.1.0 → V14.1)
-function getVersionDisplay(version: string): string {
+// Helper function to format version for display
+// Extracts suffix from package name (e.g., "atc-support-v20-op2" → "V20-OP2")
+function getVersionDisplay(version: string, packageName: string): string {
   const parts = version.split('.');
   const major = parts[0];
-  const minor = parts[1];
 
-  // If minor version is 0, show only major (14.0.0 → V14)
-  // Otherwise show major.minor (14.1.0 → V14.1)
-  if (minor === '0') {
-    return `V${major}`;
-  }
-  return `V${major}.${minor}`;
+  // Check for suffix in package name (e.g., "-op2")
+  const suffixMatch = packageName.match(/-v\d+(-\w+)?$/);
+  const suffix = suffixMatch?.[1]?.toUpperCase() || '';
+
+  return `V${major}${suffix}`;
 }
 
-const versionDisplay = getVersionDisplay(packageJson.version);
+const versionDisplay = getVersionDisplay(packageJson.version, packageJson.name);
 
 export const metadata: Metadata = {
-  title: `Enterprise AI Support ${versionDisplay} - Demo | Multi-Persona Interface`,
+  title: `EAS ${versionDisplay}`,
   description: "Demo reference with mock data - Three personas: C-Level, CS Manager, Support Agent",
   keywords: ["support", "ticketing", "AI", "dashboard", "analytics", "demo", "multi-persona"],
   icons: {
