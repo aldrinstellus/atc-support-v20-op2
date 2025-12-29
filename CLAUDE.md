@@ -32,14 +32,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Enterprise AI Support V18** - Unified Multi-Mode System with ATC/Government/Project Personas. Comprehensive persona testing and deployment infrastructure.
+**Enterprise AI Support V20-OP2** - Unified Multi-Mode System with ATC/Government/Project Personas. Opus 2 development branch with UI refinements.
 
-**Version**: 18.0.0
-**Port**: 3019
-**Status**: Development - Unified Modes
-**Base**: Cloned from V17 (Mode Switcher with all features)
-**Production URL**: https://v18-unified-modes-fpbqd8c5f-aldos-projects-8cf34b67.vercel.app
-**GitHub**: https://github.com/aldrinstellus/enterprise-ai-support-v18
+**Version**: 20.0.0
+**Port**: 3020
+**Browser Tab**: EAS V20-OP2
+**Status**: Development - Opus 2 Branch
+**Base**: Cloned from V20 (Unified Modes)
+**GitHub**: https://github.com/aldrinstellus/atc-support-v20-op2
 
 ## 📚 Documentation Structure
 
@@ -59,7 +59,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 📁 Folder Structure (SDLC-Compliant)
 
 ```
-atc-support-v20/
+atc-support-v20-op2/
 ├── src/                    # Source code
 ├── docs/                   # SDLC documentation (15 categories)
 │   ├── 00-DOCUMENTATION-INDEX.md
@@ -102,38 +102,35 @@ atc-support-v20/
 
 ## Application URLs
 
-**Development Server**: http://localhost:3019
-
-**Production**: https://v18-unified-modes-fpbqd8c5f-aldos-projects-8cf34b67.vercel.app
+**Development Server**: http://localhost:3020
 
 **Demo Pages** (ATC Mode):
-- **C-Level Executive**: http://localhost:3019/demo/atc-executive
-- **CS Manager**: http://localhost:3019/demo/atc-manager
-- **Support Agent**: http://localhost:3019/demo/atc-support
-- **Customer Success Manager**: http://localhost:3019/demo/atc-csm
+- **C-Level Executive**: http://localhost:3020/demo/atc-executive
+- **CS Manager**: http://localhost:3020/demo/atc-manager
+- **Support Agent**: http://localhost:3020/demo/atc-support
+- **Customer Success Manager**: http://localhost:3020/demo/atc-csm
 
 **Demo Pages** (Government Mode):
-- **Contract Officer Representative**: http://localhost:3019/demo/gov-cor
-- **Program Manager**: http://localhost:3019/demo/gov-program-manager
-- **Service Team Lead**: http://localhost:3019/demo/gov-service-team-lead
-- **Service Team Member**: http://localhost:3019/demo/gov-service-team-member
-- **Stakeholder Lead**: http://localhost:3019/demo/gov-stakeholder-lead
+- **Contract Officer Representative**: http://localhost:3020/demo/cor
+- **Program Manager**: http://localhost:3020/demo/program-manager
+- **Service Team Lead**: http://localhost:3020/demo/service-team-lead
+- **Service Team Member**: http://localhost:3020/demo/service-team-member
+- **Stakeholder Lead**: http://localhost:3020/demo/stakeholder-lead
 
 **Demo Pages** (Project Mode):
-- **Project Lead**: http://localhost:3019/demo/project-lead
-- **Project Manager**: http://localhost:3019/demo/project-manager
+- **Project Manager**: http://localhost:3020/demo/project-manager
 
-**API Health Check**: http://localhost:3019/api/health
+**API Health Check**: http://localhost:3020/api/health
 
 ## Development Commands
 
 ### Core Development
 ```bash
-npm run dev              # Start Next.js dev server with Turbopack (port 3019)
+npm run dev              # Start Next.js dev server with Turbopack (port 3020)
 npm run dev:full         # Start both frontend and mock WebSocket server
 npm run dev:ws           # Start mock WebSocket server only
 npm run build            # Production build with Turbopack
-npm run start            # Start production server (port 3018)
+npm run start            # Start production server (port 3020)
 ```
 
 ### Code Quality
@@ -152,7 +149,7 @@ npm run db:studio        # Open Prisma Studio for database management
 
 ## Technology Stack
 
-- **Framework**: Next.js 15 with App Router and Turbopack
+- **Framework**: Next.js 16 with App Router and Turbopack
 - **Language**: TypeScript (strict mode)
 - **Frontend**: React 19 with client components
 - **Database**: Prisma ORM with PostgreSQL
@@ -161,6 +158,7 @@ npm run db:studio        # Open Prisma Studio for database management
 - **AI Integration**: Anthropic Claude SDK (@anthropic-ai/sdk)
 - **Icons**: Lucide React
 - **Charts**: Recharts
+- **Auth**: NextAuth.js v5 (beta)
 
 ## Architecture Overview
 
@@ -363,9 +361,10 @@ NEXT_PUBLIC_WS_URL=ws://localhost:3001
 - **Demo Mode**: The app works fully without API keys using mock data
 - **Claude SDK**: Real AI responses available when `ANTHROPIC_API_KEY` is configured (see CLAUDE-SDK-SETUP.md)
 - **Database**: Prisma schema defined but database connection optional for demo
-- **Port 3019**: Chosen to avoid conflicts with other project versions (v17 uses 3018, v15 uses 3016, v14 uses 3014)
+- **Port 3020**: V20-OP2 uses port 3020 to avoid conflicts with other versions
 - **No Backend**: All state managed in localStorage for demo purposes
-- **Turbopack**: Next.js 15 uses Turbopack by default for fast builds (<1s)
+- **Turbopack**: Next.js 16 uses Turbopack by default for fast builds (<1s)
+- **Browser Tab**: Displays "EAS V20-OP2" (extracted from package name)
 
 ## Testing Queries
 
@@ -439,6 +438,17 @@ All documentation is in `/docs/` organized into 15 categories:
 - **V15**: **Presentation branch** - Client Feedback Phase 1 (8/8 complete) + Gender avatars
 - **V16**: **Client Feedback Phase 2** - Video title + Keyword animations
 - **V17**: **Mode Switcher** - Government/Project Mode Switcher with Dynamic Personas
-- **V18**: **Unified Modes** - Complete multi-mode system with ATC/Government/Project personas (THIS VERSION)
+- **V18**: **Unified Modes** - Complete multi-mode system with ATC/Government/Project personas
+- **V19**: **Sana.ai Theme** - Theme integration and chat/dashboard sync
+- **V20**: **ATC Support** - Refined ATC support with updated UI
+- **V20-OP2**: **Opus 2 Branch** - Development branch with UI refinements (THIS VERSION)
 
-**Focus**: Unified multi-mode system with comprehensive persona testing across ATC (4 personas), Government (5 personas), and Project (2 personas) modes. Full deployment to Vercel and GitHub integration.
+**Focus**: Opus 2 development branch with UI refinements including updated browser tab title (EAS V20-OP2), improved reset icon (Trash2), and theme/mode switcher functionality.
+
+## Recent Changes (V20-OP2)
+
+- Browser tab title updated to "EAS V20-OP2"
+- Reset Data icon changed from refresh to Trash2 for clarity
+- Theme toggle (sun/moon) at top-left of chat panel
+- Mode switcher (Government/Project/ATC) in sidebar header
+- Version display extracts suffix from package name automatically
